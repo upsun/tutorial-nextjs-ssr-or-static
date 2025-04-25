@@ -6,7 +6,8 @@ applications:
     web:
       locations:
         "/":
-          passthru: true
+          root: "public"
+          scripts: false
       commands:
         start: "node /app/out/standalone/server.js"
       upstream:
