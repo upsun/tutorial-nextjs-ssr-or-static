@@ -1,0 +1,22 @@
+applications:
+  next:
+    type: nodejs:22
+    build:
+      flavor: none
+    web:
+      locations:
+        "/":
+          passthru: true
+      commands:
+        start: "http-server -p $PORT -o /app/next/out"
+      upstream:
+        socket_family: tcp
+    hooks:
+      build: |
+        set -x -e
+        yarn install
+        yarn build
+
+routes:
+  "https://{all}/": { type: upstream, upstream: "next:http", id: "next" }
+  "http://{all}/": { type: redirect, to: "https://{all}/" }
