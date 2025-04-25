@@ -8,6 +8,9 @@ applications:
         "/":
           root: "public"
           scripts: false
+        "_next/static/":
+          root: "out/static/"
+          scripts: false
       commands:
         start: "node /app/out/standalone/server.js"
       upstream:
