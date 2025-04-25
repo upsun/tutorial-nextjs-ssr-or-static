@@ -8,7 +8,7 @@ applications:
         "/":
           root: "public"
           scripts: false
-        "_next/static/":
+        "/_next/static/":
           root: "out/static/"
           scripts: false
       commands:
