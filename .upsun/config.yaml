@@ -14,8 +14,8 @@ applications:
     hooks:
       build: |
         set -x -e
-        yarn install
-        yarn build
+        npm install
+        npm run build
 
 routes:
   "https://{all}/": { type: upstream, upstream: "next:http", id: "next" }
