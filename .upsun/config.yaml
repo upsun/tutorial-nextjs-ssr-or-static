@@ -8,7 +8,7 @@ applications:
         "/":
           passthru: true
       commands:
-        start: "/app/node_modules/http-server/bin/http-server /app/out -p $PORT /app/next/out"
+        start: "/app/node_modules/http-server/bin/http-server -p $PORT /app/out"
       upstream:
         socket_family: tcp
     hooks:
